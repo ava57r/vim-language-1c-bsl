@@ -1,0 +1,1094 @@
+" Snippets
+" Language:	1C (BSL)
+" Maintainer:	Andreev Alexander <andreevlex.as@gmail.com>
+" Last Change:	01/10/2016
+
+﻿# Если
+snippet Если
+	Если ${1:Условие} Тогда
+		${0}
+	КонецЕсли;
+# ЕслиИначе
+snippet Если
+	Если ${1:Условие} Тогда
+		${0}
+	Иначе
+	КонецЕсли;
+# Пока
+snippet Пока
+	Пока ${1:Условие} Цикл
+		${0}
+	КонецЦикла;
+# Для
+snippet Для
+	Для ${1:Счетчик} По ${2:Ограничение} Цикл
+		${0}
+	КонецЦикла;
+# Для каждого
+snippet ДляКаждого
+	Для каждого ${1:Переменная} Из ${2:Коллекция} Цикл
+		${0}
+	КонецЦикла;
+# Процедура
+snippet Процедура
+	Процедура ${1:ИмяПроцедуры}()
+		${0}
+	КонецПроцедуры
+# Процедура (с заголовком)
+snippet Процедура
+	// <Описание процедуры>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	Процедура ${1:ИмяПроцедуры}()
+		${0}
+	КонецПроцедуры // ${1:ИмяПроцедуры}()
+# Процедура модуля формы
+snippet Процедура
+	// <Описание процедуры>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	&${1:ВыберитеДирективуКомпиляции}
+	Процедура ${2:ИмяПроцедуры}()
+		${0}
+	КонецПроцедуры // ${2:ИмяПроцедуры}()
+# Процедура модуля команды
+snippet Процедура
+	// <Описание процедуры>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	&${1:ВыберитеДирективуКомпиляции}
+	Процедура ${2:ИмяПроцедуры}()
+		${0}
+	КонецПроцедуры // ${2:ИмяПроцедуры}()
+# Функция
+snippet Функция
+	Функция ${1:ИмяФункции}()
+		${0}
+	КонецФункции // ${1:ИмяФункции}()
+# Функция (с заголовком)
+snippet Функция
+	// <Описание функции>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	// Возвращаемое значение:
+	//   <Тип.Вид>   - <описание возвращаемого значения>
+	//
+	Функция ${1:ИмяФункции}()
+		${0}
+	КонецФункции // ${1:ИмяФункции}()
+# Функция модуля формы
+snippet Функция
+	// <Описание функции>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	// Возвращаемое значение:
+	//   <Тип.Вид>   - <описание возвращаемого значения>
+	//
+	&${1:ВыберитеДирективуКомпиляции}
+	Функция ${2:ИмяФункции}()
+		${0}
+	КонецФункции // ${2:ИмяФункции}()
+# Функция модуля команды
+snippet Функция
+	// <Описание функции>
+	//
+	// Параметры:
+	//  <Параметр1>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//  <Параметр2>  - <Тип.Вид> - <описание параметра>
+	//                 <продолжение описания параметра>
+	//
+	// Возвращаемое значение:
+	//   <Тип.Вид>   - <описание возвращаемого значения>
+	//
+	&${1:ВыберитеДирективуКомпиляции}
+	Функция ${2:ИмяФункции}()
+		${0}
+	КонецФункции // ${2:ИмяФункции}()
+# Возврат
+snippet Возврат
+"Возврат;${0}"
+# Попытка
+snippet Попытка
+	Попытка
+		${0}
+	Исключение
+	КонецПопытки;
+# Директива компиляции
+snippet Директива
+"&${1:ВыберитеДирективуКомпиляции}"
+# Инструкция Если
+snippet Инструкция
+	#Если ${1:ВыберитеИнструкциюПрепроцессора} Тогда
+		${0}
+	#КонецЕсли
+# Инструкция Область
+snippet Область
+	#Область ${0}
+	#КонецОбласти
+# Перечисление
+snippet Перечисление
+"ПредопределенноеЗначение(\"Перечисление.${1:ВыберитеЗначениеПеречисления}\")"
+# Получить функциональную опцию
+snippet Функциональнаяопция
+"ПолучитьФункциональнуюОпцию(\"${1:ВыберитеФункциональнуюОпцию}\")"
+# Получить функциональную опцию интерфейса
+snippet Функциональнаяопция
+"ПолучитьФункциональнуюОпциюИнтерфейса(\"${1:ВыберитеФункциональнуюОпцию}\")"
+# Открыть общую форму
+snippet ОткрытьФорму
+"ОткрытьФорму(\"ОбщаяФорма.${1:ВыберитеОбщуюФорму}\");"
+# Открыть общую форму (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("ОбщаяФорма.${1:ВыберитеОбщуюФорму}", ПараметрыФормы);
+# Получить общую форму
+snippet ПолучитьФорму
+"ПолучитьФорму(\"ОбщаяФорма.${1:ВыберитеОбщуюФорму}\");"
+# Получить общую форму (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("ОбщаяФорма.${1:ВыберитеОбщуюФорму}");
+# Открыть форму плана обмена
+snippet ОткрытьФорму
+"ОткрытьФорму(\"ПланОбмена.${1:ВыберитеПланОбмена}.${2:ВыберитеФорму}\");"
+# Открыть форму плана обмена (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("ПланОбмена.${1:ВыберитеПланОбмена}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму плана обмена
+snippet ПолучитьФорму
+"ПолучитьФорму(\"ПланОбмена.${1:ВыберитеПланОбмена}.${2:ВыберитеФорму}\");"
+# Получить форму плана обмена (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("ПланОбмена.${1:ВыберитеПланОбмена}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход элементов
+snippet ПланыОбменаВыбрать
+	Выборка = ПланыОбмена.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Получить/установить константу
+snippet Константы
+"Константы.$1.${2:ВыборМетода}()"
+# Установить константу
+snippet Константы
+"Константы.$1.Установить(${0});"
+# Получить константу
+snippet Константы
+"Константы.$1.Получить()"
+# Открыть форму справочника
+snippet ОткрытьФорму
+"ОткрытьФорму(\"Справочник.${1:ВыберитеСправочник}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму справочника (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("Справочник.${1:ВыберитеСправочник}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму справочника
+snippet ПолучитьФорму
+"ПолучитьФорму(\"Справочник.${1:ВыберитеСправочник}.${2:ВыберитеФорму}${0}\");"
+# Получить форму справочника (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("Справочник.${1:ВыберитеСправочник}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход элементов
+snippet СправочникиВыбрать
+	Выборка = Справочники.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Обход элементов иерархически
+snippet СправочникиВыбратьИерархически
+	Выборка = Справочники.$1.ВыбратьИерархически();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Открыть форму документа
+snippet ОткрытьФорму
+"ОткрытьФорму(\"Документ.${1:ВыберитеДокумент}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму документа (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("Документ.${1:ВыберитеДокумент}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму документа
+snippet ПолучитьФорму
+"ПолучитьФорму(\"Документ.${1:ВыберитеДокумент}.${2:ВыберитеФорму}${0}\");"
+# Получить форму документа (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("Документ.${1:ВыберитеДокумент}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход документов
+snippet ДокументыВыбрать
+	Выборка = Документы.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Движения
+snippet Движения
+"Движения.${1:ВыборРегистра}"
+# Открыть форму отчета
+snippet ОткрытьФорму
+"ОткрытьФорму(\"Отчет.${1:ВыберитеОтчет}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму отчета (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("Отчет.${1:ВыберитеОтчет}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму отчета
+snippet ПолучитьФорму
+"ПолучитьФорму(\"Отчет.${1:ВыберитеОтчет}.${2:ВыберитеФорму}${0}\");"
+# Получить форму отчета (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("Отчет.${1:ВыберитеОтчет}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Открыть форму обработки
+snippet ОткрытьФорму
+"ОткрытьФорму(\"Обработка.${1:ВыберитеОбработку}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму обработки (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("Обработка.${1:ВыберитеОбработку}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму обработки
+snippet ПолучитьФорму
+"ПолучитьФорму(\"Обработка.${1:ВыберитеОбработку}.${2:ВыберитеФорму}${0}\");"
+# Получить форму обработки (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("Обработка.${1:ВыберитеОбработку}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Открыть форму плана видов характеристик
+snippet ОткрытьФорму
+"ОткрытьФорму(\"ПланВидовХарактеристик.${1:ВыберитеПвх}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму плана видов характеристик (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("ПланВидовХарактеристик.${1:ВыберитеПвх}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму плана видов характеристик
+snippet ПолучитьФорму
+"ПолучитьФорму(\"ПланВидовХарактеристик.${1:ВыберитеПвх}.${2:ВыберитеФорму}${0}\");"
+# Получить форму плана видов характеристик (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("ПланВидовХарактеристик.${1:ВыберитеПвх}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход видов характеристик
+snippet ПланыВидовХарактеристикВыбрать
+	Выборка = ПланыВидовХарактеристик.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Открыть форму плана счетов
+snippet ОткрытьФорму
+"ОткрытьФорму(\"ПланСчетов.${1:ВыберитеПланСчетов}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму плана счетов (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("ПланСчетов.${1:ВыберитеПланСчетов}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму плана счетов
+snippet ПолучитьФорму
+"ПолучитьФорму(\"ПланСчетов.${1:ВыберитеПланСчетов}.${2:ВыберитеФорму}${0}\");"
+# Получить форму плана счетов (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("ПланСчетов.${1:ВыберитеПланСчетов}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Найти по коду
+snippet ПланыСчетов
+"ПланыСчетов.$1.НайтиПоКоду(${0})"
+# Открыть форму плана видов расчета
+snippet ОткрытьФорму
+"ОткрытьФорму(\"ПланВидовРасчета.${1:ВыберитеПланВидовРасчета}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму плана видов расчета (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("ПланВидовРасчета.${1:ВыберитеПланВидовРасчета}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму плана видов расчета
+snippet ПолучитьФорму
+"ПолучитьФорму(\"ПланВидовРасчета.${1:ВыберитеПланВидовРасчета}.${2:ВыберитеФорму}${0}\");"
+# Получить форму плана видов расчета (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("ПланВидовРасчета.${1:ВыберитеПланВидовРасчета}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход видов расчета
+snippet ПланыВидовРасчетаВыбрать
+	Выборка = ПланыВидовРасчета.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Открыть форму бизнес-процесса
+snippet ОткрытьФорму
+"ОткрытьФорму(\"БизнесПроцесс.${1:ВыберитеБизнес-Процесс}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму бизнес-процесса (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("БизнесПроцесс.${1:ВыберитеБизнес-Процесс}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму бизнес-процесса
+snippet ПолучитьФорму
+"ПолучитьФорму(\"БизнесПроцесс.${1:ВыберитеБизнес-Процесс}.${2:ВыберитеФорму}${0}\");"
+# Получить форму бизнес-процесса (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("БизнесПроцесс.${1:ВыберитеБизнес-Процесс}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Обход бизнес-процессов
+snippet БизнесПроцессыВыбрать
+	Выборка = БизнесПроцессы.$1.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Открыть форму задачи
+snippet ОткрытьФорму
+"ОткрытьФорму(\"Задача.${1:ВыберитеЗадачу}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму задачи (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("Задача.${1:ВыберитеЗадачу}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму задачи
+snippet ПолучитьФорму
+"ПолучитьФорму(\"Задача.${1:ВыберитеЗадачу}.${2:ВыберитеФорму}${0}\");"
+# Получить форму задачи (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("Задача.${1:ВыберитеЗадачу}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Открыть форму регистра сведений
+snippet ОткрытьФорму
+"ОткрытьФорму(\"РегистрСведений.${1:ВыберитеРегистрСведений}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму регистра сведений (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("РегистрСведений.${1:ВыберитеРегистрСведений}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму регистра сведений
+snippet ПолучитьФорму
+"ПолучитьФорму(\"РегистрСведений.${1:ВыберитеРегистрСведений}.${2:ВыберитеФорму}${0}\");"
+# Получить форму регистра сведений (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("РегистрСведений.${1:ВыберитеРегистрСведений}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Выборка записей регистра сведений
+snippet РегистрыСведенийВыбрать
+	Выборка = РегистрыСведений.${1:ВыберитеРегистрСведений}.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Выборка записей регистра сведений (по регистратору)
+snippet РегистрыСведенийВыбратьПоРегистратору
+	Выборка = РегистрСведений.${1:ВыберитеРегистрСведений}.ВыбратьПоРегистратору(${0});
+	Пока Выборка.Следующий() Цикл
+	КонецЦикла;
+# Открыть форму регистра накопления
+snippet ОткрытьФорму
+"ОткрытьФорму(\"РегистрНакопления.${1:ВыберитеРегистрНакопления}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму регистра накопления (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("РегистрНакопления.${1:ВыберитеРегистрНакопления}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму регистра накопления
+snippet ПолучитьФорму
+"ПолучитьФорму(\"РегистрНакопления.${1:ВыберитеРегистрНакопления}.${2:ВыберитеФорму}${0}\");"
+# Получить форму регистра накопления (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("РегистрНакопления.${1:ВыберитеРегистрНакопления}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Выборка записей регистра накопления
+snippet РегистрНакопленияВыбрать
+	Выборка = РегистрНакопления.${1:ВыберитеРегистрНакопления}.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Выборка записей регистра накопления (по регистратору)
+snippet РегистрНакопленияВыбратьПоРегистратору
+	Выборка = РегистрНакопления.${1:ВыберитеРегистрНакопления}.ВыбратьПоРегистратору(${0});
+	Пока Выборка.Следующий() Цикл
+	КонецЦикла;
+# Открыть форму регистра бухгалтерии
+snippet ОткрытьФорму
+"ОткрытьФорму(\"РегистрБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму регистра бухгалтерии (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("РегистрБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму регистра бухгалтерии
+snippet ПолучитьФорму
+"ПолучитьФорму(\"РегистрБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.${2:ВыберитеФорму}${0}\");"
+# Получить форму регистра бухгалтерии (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("РегистрБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Выборка записей регистра бухгалтерии
+snippet РегистрыБухгалтерииВыбрать
+	Выборка = РегистрыБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Выборка записей регистра бухгалтерии (по регистратору)
+snippet РегистрыБухгалтерииВыбратьПоРегистратору
+	Выборка = РегистрыБухгалтерии.${1:ВыберитеРегистрБухгалтерии}.ВыбратьПоРегистратору(${0});
+	Пока Выборка.Следующий() Цикл
+	КонецЦикла;
+# Открыть форму регистра расчета
+snippet ОткрытьФорму
+"ОткрытьФорму(\"РегистрРасчета.${1:ВыберитеРегистрРасчета}.${2:ВыберитеФорму}${0}\");"
+# Открыть форму регистра расчета (с параметрами)
+snippet ОткрытьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	ОткрытьФорму("РегистрРасчета.${1:ВыберитеРегистрРасчета}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Получить форму регистра расчета
+snippet ПолучитьФорму
+"ПолучитьФорму(\"РегистрРасчета.${1:ВыберитеРегистрРасчета}.${2:ВыберитеФорму}${0}\");"
+# Получить форму регистра расчета (с параметрами)
+snippet ПолучитьФорму
+	ПараметрыФормы = Новый Структура;
+	ПараметрыФормы.Вставить("${0}", );
+	Форма = ПолучитьФорму("РегистрРасчета.${1:ВыберитеРегистрРасчета}.${2:ВыберитеФорму}", ПараметрыФормы);
+# Выборка записей регистра расчета
+snippet РегистрыРасчетаВыбрать
+	Выборка = РегистрыРасчета.${1:ВыберитеРегистрРасчета}.Выбрать();
+	Пока Выборка.Следующий() Цикл
+		${0}
+	КонецЦикла;
+# Выборка записей регистра расчета (по регистратору)
+snippet РегистрыРасчетаВыбратьПоРегистратору
+	Выборка = РегистрыРасчета.${1:ВыберитеРегистрРасчета}.ВыбратьПоРегистратору(${0});
+	Пока Выборка.Следующий() Цикл
+	КонецЦикла;
+# Сообщение
+snippet Сообщение
+	Сообщение = Новый СообщениеПользователю;
+	Сообщение.Текст = "${0}";
+	Сообщение.Поле = "";
+	Сообщение.УстановитьДанные();
+	Сообщение.Сообщить();
+# Предупреждение
+snippet Предупреждение
+"Предупреждение(${0});"
+# Формат
+snippet Формат
+"Формат(${0}, \"$1\")"
+# Создать структуру
+snippet Структура
+"Новый Структура(\"${0}\", )"
+# Запрос
+snippet Запрос
+	Запрос = Новый Запрос;
+	Запрос.Текст = "$1";
+	Результат = Запрос.Выполнить();
+	Выборка = Результат.Выбрать();
+	Пока Выборка.Следующий() Цикл
+	  ${0}
+	КонецЦикла;
+# Запрос с параметром
+snippet Запрос
+	Запрос = Новый Запрос;
+	Запрос.Текст = "$1";
+	Запрос.УстановитьПараметр("${0}", );
+	Результат = Запрос.Выполнить();
+	Выборка = Результат.Выбрать();
+	Пока Выборка.Следующий() Цикл
+	КонецЦикла;
+# Вопрос
+snippet Вопрос
+"Вопрос(\"${1:ТекстВопроса}\", ${2:РежимДиалогаВопрос})"
+# Вопрос с анализом результата
+snippet Вопрос
+"Вопрос(\"${1:ТекстВопроса}\", ${2:РежимДиалогаВопрос}) = ${3:КодВозвратаДиалога}"
+# Проверка типа
+snippet ПроверитьТип
+	Если ТипЗнч(${1:ВыражениеДляПроверкиТипа}) = Тип("${2:ВыберитеТип}") Тогда
+		${0}
+	КонецЕсли;
+# If
+snippet If
+	If ${1:Condition} Then
+		${0}
+	EndIf;
+# IfElse
+snippet If
+	If ${1:Condition} Then
+		${0}
+	Else
+	EndIf;
+# While
+snippet While
+	While ${1:Condition} Do
+		${0}
+	EndDo;
+# For
+snippet For
+	For ${1:Counter} To ${2:Limit} Do
+		${0}
+	EndDo;
+# For Each
+snippet ForEach
+	For Each ${1:Variable} In ${2:Collection} Do
+		${0}
+	EndDo;
+# Procedure
+snippet Procedure
+	Procedure ${1:ProcedureName}()
+		${0}
+	EndProcedure
+# Procedure (with header)
+snippet Procedure
+	// <Procedure description>
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//
+	Procedure ${1:ProcedureName}()
+		${0}
+	EndProcedure // ${1:ProcedureName}()
+# Procedure in a form module
+snippet Procedure
+	// <Procedure description>
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//
+	&${1:ChooseACompilationDirective}
+	Procedure ${2:ProcedureName}()
+		${0}
+	EndProcedure // ${2:ProcedureName}()
+# Procedure in a command module
+snippet Procedure
+	// <Procedure description>
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                  <parameter description continued>
+	//
+	&${1:ChooseACompilationDirective}
+	Procedure ${2:ProcedureName}()
+		${0}
+	EndProcedure // ${2:ProcedureName}()
+# Function
+snippet Function
+	Function ${1:FunctionName}()
+		${0}
+	EndFunction // ${1:FunctionName}()
+# Function (with header)
+snippet Function
+	// <Function description>
+	//
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//
+	// Returns:
+	//   <Type.Subtype>   - <returned value description>
+	//
+	Function ${1:FunctionName}()
+		${0}
+	EndFunction // ${1:FunctionName}()
+# Function in a form module
+snippet Function
+	// <Function description>
+	//
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//
+	// Returns:
+	//   <Type.Subtype>   - <returned value description>
+	//
+	&${1:ChooseACompilationDirective}
+	Function ${2:FunctionName}()
+		${0}
+	EndFunction // ${2:FunctionName}()
+# Function in a command module
+snippet Function
+	// <Function description>
+	//
+	//
+	// Parameters:
+	//  <Parameter1>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//  <Parameter2>  - <Type.Subtype> - <parameter description>
+	//                 <parameter description continued>
+	//
+	// Returns:
+	//   <Type.Subtype>   - <returned value description>
+	//
+	&${1:ChooseACompilationDirective}
+	Function ${2:FunctionName}()
+		${0}
+	EndFunction // ${2:FunctionName}()
+# Return
+snippet Return
+"Return;${0}"
+# Try
+snippet Try
+	Try
+		${0}
+	Except
+	EndTry;
+# Compilation directive
+snippet Directive
+"&${1:ChooseACompilationDirective}"
+# Instruction If
+snippet Instrution
+	#If ${1:ChooseAPreprocessorInstruction} Then
+		${0}
+	#EndIf
+# Instruction Region
+snippet Region
+	#Region ${0}
+	#EndRegion
+# Enumeration
+snippet Enums
+"PredefinedValue(\"Enum.${1:ChooseAnEnumerationValue}\")"
+# Get a functional option
+snippet Functionaloption
+"GetFunctionalOption(\"${1:ChooseAFunctionalOption}\")"
+# Get an interface functional option
+snippet Functionaloption
+"GetInterfaceFunctionalOption(\"${1:ChooseAFunctionalOption}\")"
+# Open a common form
+snippet OpenForm
+"OpenForm(\"CommonForm.${1:ChooseACommonForm}\");"
+# Open a common form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("CommonForm.${1:ChooseACommonForm}", FormParameters);
+# Get a common form
+snippet GetForm
+"GetForm(\"CommonForm.${1:ChooseACommonForm}\");"
+# Get a common form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("CommonForm.${1:ChooseACommonForm}");
+# Open an exchange plan form
+snippet OpenForm
+"OpenForm(\"ExchangePlan.${1:ChooseAnExchangePlan}.${2:ChooseForm}\");"
+# Open an exchange plan form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("ExchangePlan.${1:ChooseAnExchangePlan}.${2:ChooseForm}", FormParameters);
+# Get an exchange plan form
+snippet GetForm
+"GetForm(\"ExchangePlan.${1:ChooseAnExchangePlan}.${2:ChooseForm}\");"
+# Get an exchange plan form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("ExchangePlan.${1:ChooseAnExchangePlan}.${2:ChooseForm}", FormParameters);
+# Items traversal
+snippet ExchangePlansChoose
+	Selection = ExchangePlans.$1.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Get/Set constant
+snippet Constants
+"Constants.$1.${2:SelectVariant}()"
+# Set constant
+snippet Constants
+"Constants.$1.Set(${0});"
+# Get constant
+snippet Constants
+"Constants.$1.Get()"
+# Open a catalog form
+snippet OpenForm
+"OpenForm(\"Catalog.${1:ChooseACatalog}.${2:ChooseForm}${0}\");"
+# Open a catalog form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("Catalog.${1:ChooseCatalog}.${2:ChooseForm}", FormParameters);
+# Get a catalog form
+snippet GetForm
+"GetForm(\"Catalog.${1:ChooseACatalog}.${2:ChooseForm}${0}\");"
+# Get a catalog form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("Catalog.${1:ChooseCatalog}.${2:ChooseForm}", FormParameters);
+# Item traversal
+snippet CatalogsSelect
+	Select = Catalogs.$1.Select();
+	While Select.Next() Do
+		${0}
+	EndDo;
+# Items hierarchical traversal
+snippet CatalogsSelectHierarchicaly
+	Select = Catalogs.$1.SelectHierarchicaly();
+	While Select.Next() Do
+		${0}
+	EndDo;
+# Open a document form
+snippet OpenForm
+"OpenForm(\"Document.${1:ChooseADocument}.${2:ChooseForm}${0}\");"
+# Open a document form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("Document.${1:ChooseADocument}.${2:ChooseForm}", FormParameters);
+# Get a document form
+snippet GetForm
+"GetForm(\"Document.${1:ChooseADocument}.${2:ChooseForm}${0}\");"
+# Get a document form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("Document.${1:ChooseADocument}.${2:ChooseForm}", FormParameters);
+# Document walk-through
+snippet DocumentsSelect
+	Select = Documents.$1.Select();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# RegisterRecords
+snippet RegisterRecords
+"RegisterRecords.${1:ChooseARegister}"
+# Open a report form
+snippet OpenForm
+"OpenForm(\"Report.${1:ChooseAReport}.${2:ChooseForm}${0}\");"
+# Open a report form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("Report.${1:ChooseAReport}.${2:ChooseForm}", FormParameters);
+# Get a report form
+snippet GetForm
+"GetForm(\"Report.${1:ChooseAReport}.${2:ChooseForm}${0}\");"
+# Get a report form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("Report.${1:ChooseAReport}.${2:ChooseForm}", FormParameters);
+# Open a data processor form
+snippet OpenForm
+"OpenForm(\"DataProcessor.${1:ChooseADataProcessor}.${2:ChooseForm}${0}\");"
+# Open a data processor form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("DataProcessor.${1:ChooseADataProcessor}}.${2:ChooseForm}", FormParameters);
+# Get a data processor form
+snippet GetForm
+"GetForm(\"DataProcessor.${1:ChooseADataProcessor}.${2:ChooseForm}${0}\");"
+# Get a data processor form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("DataProcessor.${1:ChooseADataProcessor}.${2:ChooseForm}", FormParameters);
+# Open a chart of characteristic types form
+snippet OpenForm
+"OpenForm(\"ChartOfCharacteristicTypes.${1:ChooseAChartOfCharateristicTypes}.${2:ChooseForm}${0}\");"
+# Open a chart of characteristic types form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("ChartOfCharacteristicTypes.${1:ChooseAChartOfCharacteristicTypes}.${2:ChooseForm}", FormParameters);
+# Get a chart of characteristic types form
+snippet GetForm
+"GetForm(\"ChartOfCharacteristicTypes.${1:ChooseAChartOfCharacteristicTypes}.${2:ChooseForm}${0}\");"
+# Get a chart of characteristic types form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("ChartOfCharacteristicTypes.${1:ChooseAChartOfCharacteristicTypes}.${2:ChooseForm}", FormParameters);
+# Charts of characteristic types traversal
+snippet ChartOfAccountsChoose
+	Selection = ChartOfAccounts.$1.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Open a chart of accounts form
+snippet OpenForm
+"OpenForm(\"ChartOfAccounts.${1:ChooseAChartOfAccounts}.${2:ChooseForm}${0}\");"
+# Open a chart of accounts form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("ChartOfAccounts.${1:ChooseAChartOfAccounts}.${2:ChooseForm}", FormParameters);
+# Get a chart of accounts form
+snippet GetForm
+"GetForm(\"ChartOfAccounts.${1:ChooseAChartOfAccounts}.${2:ChooseForm}${0}\");"
+# Get a chart of accounts form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("ChartOfAccounts.${1:ChooseAChartOfAccounts}.${2:ChooseForm}", FormParameters);
+# Find by code
+snippet ChartsOfAccounts
+"ChartsOfAccounts.$1.FindByCode(${0})"
+# Open a chart of calculation types form
+snippet OpenForm
+"OpenForm(\"ChartOfCalculationTypes.${1:ChooseAChartOfCalculationTypes}.${2:ChooseForm}${0}\");"
+# Open a chart of calculation types form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("ChartOfCalculationTypes.${1:ChooseAChartOfCalculationTypes}.${2:ChooseForm}", FormParameters);
+# Get a chart of calculation types form
+snippet GetForm
+"GetForm(\"ChartOfCalculationTypes.${1:ChooseAChartOfCalculationTypes}.${2:ChooseForm}${0}\");"
+# Get a chart of calculation types form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("ChartOfCalculationTypes.${1:ChooseAChartOfCalculationTypes}.${2:ChooseForm}", FormParameters);
+# Charts of calculation types traversal
+snippet ChartsOfCalculationTypesChoose
+	Selection = ChartsOfCalculationTypes.$1.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Open a business process form
+snippet OpenForm
+"OpenForm(\"BusinessProcess.${1:ChooseABusinessProcess}.${2:ChooseForm}${0}\");"
+# Open a business process form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("BusinessProcess.${1:ChooseABusinessProcess}.${2:ChooseForm}", FormParameters);
+# Get a business process form
+snippet GetForm
+"GetForm(\"BusinessProcess.${1:ChooseABusinessProcess}.${2:ChooseForm}${0}\");"
+# Get a business process form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("BusinessProcess.${1:ChooseABusinessProcess}.${2:ChooseForm}", FormParameters);
+# Business processes traversal
+snippet BusinessProcessesChoose
+	Selection = BusinessProcesses.$1.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Open a task form
+snippet OpenForm
+"OpenForm(\"Task.${1:ChooseATask}.${2:ChooseForm}${0}\");"
+# Open a task form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("Task.${1:ChooseATask}.${2:ChooseForm}", FormParameters);
+# Get a task form
+snippet GetForm
+"GetForm(\"Task.${1:ChooseATask}.${2:ChooseForm}${0}\");"
+# Get a task form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("Task.${1:ChooseATask}.${2:ChooseForm}", FormParameters);
+# Open an information register form
+snippet OpenForm
+"OpenForm(\"InformationRegister.${1:ChooseAnInformationRegister}.${2:ChooseForm}${0}\");"
+# Open an information register form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("InformationRegister.${1:ChooseAnInformationRegister}.${2:ChooseForm}", FormParameters);
+# Get an information register form
+snippet GetForm
+"GetForm(\"InformationRegister.${1:ChooseAnInformationRegister}.${2:ChooseForm}${0}\");"
+# Get an information register form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("InformationRegister.${1:ChooseAnInformationRegister}.${2:ChooseForm}", FormParameters);
+# Selection of information register records
+snippet InformationRegisterChoose
+	Selection = InformationRegister.${1:ChooseAnInformationRegister}.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Selection of information register records (by recorder)
+snippet InformationRegisterSelectByRecorder
+	Selection = InformationRegister.${1:ChooseAnInformationRegister}.SelectByRecorder(${0});
+	While Selection.Next() Do
+	EndDo;
+# Open an accumulation register form
+snippet OpenForm
+"OpenForm(\"AccumulationRegister.${1:ChooseAnAccumulationRegister}.${2:ChooseForm}${0}\");"
+# Open an accumulation register form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("AccumulationRegister.${1:ChooseAnAccumulationRegister}.${2:ChooseForm}", FormParameters);
+# Get an accumulation register form
+snippet GetForm
+"GetForm(\"AccumulationRegister.${1:ChooseAnAccumulationRegister}.${2:ChooseForm}${0}\");"
+# Get an accumulation register form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("AccumulationRegister.${1:ChooseAnAccumulationRegister}.${2:ChooseForm}", FormParameters);
+# Selection of accumulation register records
+snippet AccumulationRegisterChoose
+	Selection = AccumulationRegister.${1:ChooseAnAccumulationRegister}.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Selection of accumulation register records (by recorder)
+snippet AccumulationRegisterSelectByRecorder
+	Selection = AccumulationRegister.${1:ChooseAnAccumulationRegister}.SelectByRecorder(${0});
+	While Selection.Next() Do
+	EndDo;
+# Open an accounting register form
+snippet OpenForm
+"OpenForm(\"AccountingRegister.${1:ChooseAnAccountingRegister}.${2:ChooseForm}${0}\");"
+# Open an accounting register form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("AccountingRegister.${1:ChooseAnAccountingRegister}.${2:ChooseForm}", FormParameters);
+# Get an accounting register form
+snippet GetForm
+"GetForm(\"AccountingRegister.${1:ChooseAnAccountingRegister}.${2:ChooseForm}${0}\");"
+# Get an accounting register form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("AccountingRegister.${1:ChooseAnAccountingRegister}.${2:ChooseForm}", FormParameters);
+# Selection of accounting register records
+snippet AccountingRegisterChoose
+	Selection = AccountingRegister.${1:ChooseAnAccountingRegister}.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Selection of accounting register records (by recorder)
+snippet AccountingRegisterSelectByRecorder
+	Selection = AccountingRegister.${1:ChooseAnAccountingRegister}.SelectByRecorder(${0});
+	While Selection.Next() Do
+	EndDo;
+# Open a calculation register form
+snippet OpenForm
+"OpenForm(\"CalculationRegister.${1:ChooseACalculationRegister}.${2:ChooseForm}${0}\");"
+# Open a calculation register form (with parameters)
+snippet OpenForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	OpenForm("CalculationRegister.${1:ChooseACalculationRegister}.${2:ChooseForm}", FormParameters);
+# Get a calculation register form
+snippet GetForm
+"GetForm(\"CalculationRegister.${1:ChooseACalculationRegister}.${2:ChooseForm}${0}\");"
+# Get a calculation register form (with parameters)
+snippet GetForm
+	FormParameters = New Structure;
+	FormParameters.Insert("${0}", );
+	Form = GetForm("CalculationRegister.${1:ChooseACalculationRegister}.${2:ChooseForm}", FormParameters);
+# Selection of calculation register records
+snippet CalculationRegisterChoose
+	Selection = CalculationRegister.${1:ChooseACalculationRegister}.Choose();
+	While Selection.Next() Do
+		${0}
+	EndDo;
+# Selection of calculation register records (by recorder)
+snippet CalculationRegisterSelectByRecorder
+	Selection = CalculationRegister.${1:ChooseACalculationRegister}.SelectByRecorder(${0});
+	While Selection.Next() Do
+	EndDo;
+# Message
+snippet Message
+	Message = New UserMessage;
+	Message.Text = "${0}";
+	Message.Field = "";
+	Message.SetData();
+	Message.Message();
+# DoMessageBox
+snippet DoMessageBox
+"DoMessageBox(${0});"
+# Format
+snippet Format
+"Format(${0}, \"$1\")"
+# Create a structure
+snippet Structure
+"New Structure(\"${0}\", )"
+# Query
+snippet Query
+	Query = New Query;
+	Query.Text = "$1";
+	Result = Query.Execute();
+	Selection = Result.Choose();
+	While Selection.Next() Do
+	  ${0}
+	EndDo;
+# Query with parameter
+snippet Query
+	Query = New Query;
+	Query.Text = "$1";
+	Query.SetParameter("${0}", );
+	Result = Query.Execute();
+	Selection = Result.Choose();
+	While Selection.Next() Do
+	EndDo;
+# Promt
+snippet DoQueryBox
+"DoQueryBox(\"${1:PromptText}\", ${2:DialogPrompt})"
+# Conditional Prompt
+snippet DoQueryBox
+"DoQueryBox(\"${1:PromptText}\", ${2:DialogPrompt}) = ${3:DialogReturnCode}"
+# Type check
+snippet TypeCheck
+	If TypeOf(${1:ExpressionForTypeCheck}) = Type("${2:ChooseType}") Then
+		${0}
+	EndIf;
