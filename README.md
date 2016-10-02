@@ -36,7 +36,7 @@ filetype plugin indent on
 После успешной установки добавим в файл `~/.vimrc` настройку для поддержки шаблонов 
 ```vim
 " указываем каталог с настройками SnipMate
-let g:snippets_dir = "~/.vim//bundle/vim-language-1c-bsl/snippets"
+let g:snippets_dir = "~/.vim/bundle/vim-language-1c-bsl/snippets"
 ```
 
 
