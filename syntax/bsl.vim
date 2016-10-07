@@ -53,7 +53,7 @@ syn match bslRegion "#\(КонецОбласти\|EndRegion\)"
 
 " --- Глобальный контекст ---
 " функции работы со значениями типа Строка
-syn keyword bslGlobalFunction СтрДлина StrLen|СокрЛ TrimL СокрП TrimR СокрЛП TrimAll Лев Left Прав Right Сред Mid СтрНайти StrFind ВРег Upper НРег Lower ТРег Title Символ Char КодСимвола CharCode ПустаяСтрока IsBlankString СтрЗаменить StrReplace СтрЧислоСтрок StrLineCount СтрПолучитьСтроку StrGetLine СтрЧислоВхождений StrOccurrenceCount СтрСравнить StrCompare СтрНачинаетсяС StrStartWith СтрЗаканчиваетсяНа StrEndsWith СтрРазделить StrSplit СтрСоединить StrConcat
+syn keyword bslGlobalFunction СтрДлина StrLen СокрЛ TrimL СокрП TrimR СокрЛП TrimAll Лев Left Прав Right Сред Mid СтрНайти StrFind ВРег Upper НРег Lower ТРег Title Символ Char КодСимвола CharCode ПустаяСтрока IsBlankString СтрЗаменить StrReplace СтрЧислоСтрок StrLineCount СтрПолучитьСтроку StrGetLine СтрЧислоВхождений StrOccurrenceCount СтрСравнить StrCompare СтрНачинаетсяС StrStartWith СтрЗаканчиваетсяНа StrEndsWith СтрРазделить StrSplit СтрСоединить StrConcat
 " функции работы со значениями типа Число
 syn keyword bslGlobalFunction Цел Int Окр Round ACos ACos ASin ASin ATan ATan Cos Cos Exp Exp Log Log Log10 Log10 Pow Pow Sin Sin Sqrt Sqrt Tan Tan
 " функции работы со значениями типа Дата
