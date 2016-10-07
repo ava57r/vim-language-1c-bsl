@@ -38,6 +38,10 @@ filetype plugin indent on
 " указываем каталог с настройками SnipMate
 let g:snippets_dir = "~/.vim/bundle/vim-language-1c-bsl/snippets"
 ```
+# Снимок экрана Gvim
+![vim-syntax-1c-bsl](https://cloud.githubusercontent.com/assets/20382553/19023013/51bbcf1c-88f5-11e6-89a0-406e6716c4ee.png)
+# Снимок экрана Vim (терминал)
+![vim-1c-bsl-terminal](https://cloud.githubusercontent.com/assets/20382553/19032706/744de89a-896c-11e6-9acf-0ef9e859aaf9.png)
 
 
 
