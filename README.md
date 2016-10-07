@@ -5,12 +5,14 @@
 
 # Установка
 Установим менеджер пакетов Vundle для vim
-`git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 Настроим файл `~/.vimrc`
 ```vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
- 
+
+Plugin 'VundleVim/Vundle.vim'		" let Vundle manage Vundle, required 
+
 "=====================================================
 " Vundle settings
 "=====================================================
