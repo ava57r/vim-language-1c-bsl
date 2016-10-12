@@ -17,7 +17,7 @@ syn sync lines=250
 syn match  keyword_operator_punctuation_bsl  "\([\[\]:(),;]\)"
 syn match  keyword_operator_bsl              "[-+/*%=<>.?]"
 syn region comment_line_double_slash_bsl  start="//" end="$"
-syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ skip=+\\"+ end=+"+
+syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+
 syn match  constant_numeric_bsl              "-\=\<\d\+\>"
 syn match  constant_float_bsl                "-\=\<\d\+\.\d\+\>"
 syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
