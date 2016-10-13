@@ -143,7 +143,6 @@ HiLink keyword_operator_punctuation_bsl          Operator
 HiLink keyword_operator_bsl                      Operator
 HiLink comment_line_double_slash_bsl		 Comment
 HiLink string_quoted_double_bsl                  String
-HiLink bslConstant                               Constant
 HiLink constant_numeric_bsl                      Number
 HiLink constant_float_bsl                        Float
 HiLink constant_other_date_bsl                   Constant
