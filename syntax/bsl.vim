@@ -5,19 +5,30 @@
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
-  finish
+if !exists("main_syntax")
+  if version < 600
+    syntax clear
+  elseif exists("b:current_syntax")
+    finish
+  endif
+  let main_syntax = 'bsl'
 endif
+
+let s:cpo_save = &cpo
+set cpo&vim
 
 syn case ignore
 syn sync lines=250
 
 syn match  keyword_operator_punctuation_bsl  "\([\[\]:(),;]\)"
 syn match  keyword_operator_bsl              "[-+/*%=<>.?]"
+
+"Поддержка 1c-query
+syntax include @bslSDBL <sfile>:p:h/sdbl.vim
+unlet b:current_syntax
+
 syn region comment_line_double_slash_bsl  start="//" end="$"
-syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+
+syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+ contains=@bslSDBL
 syn match  constant_numeric_bsl              "-\=\<\d\+\>"
 syn match  constant_float_bsl                "-\=\<\d\+\.\d\+\>"
 syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
@@ -167,3 +178,10 @@ delcommand HiLink
 endif
 
 let b:current_syntax = "bsl"
+
+if main_syntax == 'bsl'
+  unlet main_syntax
+endif
+
+let &cpo = s:cpo_save
+unlet s:cpo_save
