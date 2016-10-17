@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (SDBL)
 " Maintainer:	Andreev Alexander <andreevlex.as@gmail.com>
-" Last Change:	15/10/2016
+" Last Change:	17/10/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -22,17 +22,17 @@ syn match   constant_character_escape_sdbl     +\"\"+
 syn match   constant_language_sdbl             "\(\([^.]\|^\)\@<=\)\<\(Неопределено\|Undefined\|Истина\|True\|Ложь\|False\|NULL\)\>"
 syn match   constant_numeric_bsl               "-\=\<\d\+\>"
 syn match   constant_float_bsl                 "-\=\<\d\+\.\d\+\>"
-syn match variable_parameter_sdbl "\(&[a-z0-9_а-яё]\+\)"
+syn match   variable_parameter_sdbl "\(&[a-z0-9_а-яё]\+\)"
 syn match   keyword_control_conditional_sdbl  "\(\([^.]\|^\)\@<=\)\<\(Выбор\|Case\|Когда\|When\|Тогда\|Then\|Иначе\|Else\|Конец\|End\)\>" 
 syn match   keyword_operator_logical_sdbl      "\(\(КАК\s\|AS\s\)\@<!\)\(\([^.]\|^\)\@<=\)\<\(НЕ\|NOT\|И\|AND\|ИЛИ\|OR\|В\s\+ИЕРАРХИИ\|IN\s\+HIERARCHY\|В\|In\|Между\|Between\|Есть\sNULL\|Is\s\+NULL\|Ссылка\|Refs\|Подобно\|Like\)\>" 
 syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Выбрать\|Select\|Разрешенные\|Allowed\|Различные\|Distinct\|Первые\|Top\|Как\|As\|ПустаяТаблица\|EpmtyTable\|Поместить\|Into\|Уничтожить\|Drop\|Из\|From\)\>"
-syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Левое\|Left\|Правое\|Right\|Полное\|Full\)\s\+\(Внешнее\|Outer\)\?\s\+Соединение\|Join\>"
-syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(\(Внутреннее\|Inner\)\?\s\+Соединение\|Join\)\>"
+syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Левое\|Left\|Правое\|Right\|Полное\|Full\)\s\+\(Внешнее\s\+\|Outer\s\+\)\?Соединение\|Join\>"
+syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(\(Внутреннее\s\+\|Inner\s\+\)\?Соединение\|Join\)\>"
 syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Где\|Where\|Сгруппировать\s\+По\|Group\s\+By\|Имеющие\|Having\)\>"
 syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Объединить\(\s\+Все\)\?\|Union\(\s\+All\)\?\)\>"
 syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Упорядочить\s\+По\|Order\s\+By\|Автоупорядочивание\|Autoorder\|Итоги\|Totals\)\>"
 syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(По\(\s\+Общие\)\?\|By\(\s\+Overall\)\?\|\(Только\s\+\)\?Иерархия\|\(Only\s\+\)\?Hierarchy\)\>"
-syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Периодами\|Periods\|Индексировать\s\+По\|Index\s\+By\|Выразить\|Cast\|Возр\|Asc\|Убыв\|Desc\|Для\s\+Изменения\|For\sUpdate\(\s\+Of\)\?\|Спецсимвол\|Escape\)\>"
+syn match keyword_control_sdbl "\(\([^.]\|^\)\@<=\)\<\(Периодами\|Periods\|Индексировать\|Index\|Выразить\|Cast\|Возр\|Asc\|Убыв\|Desc\|Для\s\+Изменения\|For\s\+Update\(\s\+Of\)\?\|Спецсимвол\|Escape\)\>"
 
 "Функции языка запросов
 syn match support_function_sdbl "\(\([^.]\|^\)\@<=\)\<\(Значение\|Value\)\>\s*\((\@=\)"

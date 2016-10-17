@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Andreev Alexander <andreevlex.as@gmail.com>
-" Last Change:	08/10/2016
+" Last Change:	17/10/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -28,7 +28,8 @@ syntax include @bslSDBL <sfile>:p:h/sdbl.vim
 unlet b:current_syntax
 
 syn region comment_line_double_slash_bsl  start="//" end="$"
-syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+ contains=@bslSDBL
+syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+ contains=source_sdbl
+syn region source_sdbl   start="\(\(\W[^а-яё.]\)\@<=\|^\)\(Выбрать\|Select\(\s\+Разрешенные\|Allowed\)\?\(\s\+Различные\|Distinct\)\?\(\s\+Первые\|Top\)\?\)\(\(\W[^а-яё.]\)\@=\|$\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
 syn match  constant_numeric_bsl              "-\=\<\d\+\>"
 syn match  constant_float_bsl                "-\=\<\d\+\.\d\+\>"
 syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
@@ -47,13 +48,13 @@ syn keyword storage_modifier_bsl    Знач Val
 syn keyword storage_modifier_bsl    Перем Var 
 
 " directive
-syn match keyword_other_directive_bsl "&\(НаКлиенте\(\(НаСервере\(БезКонтекста\)\?\)\?\)\|AtClient\(\(AtServer\(NoContext\)\?\)\?\)\|НаСервере\(БезКонтекста\)\?\|AtServer\(NoContext\)\?\)" 
+syn match  keyword_other_directive_bsl "&\(НаКлиенте\(\(НаСервере\(БезКонтекста\)\?\)\?\)\|AtClient\(\(AtServer\(NoContext\)\?\)\?\)\|НаСервере\(БезКонтекста\)\?\|AtServer\(NoContext\)\?\)" 
 syn region keyword_control_import_bsl start="#\(Использовать\|Use\)" end="$"
 " preprocessor conditional
-syn match keyword_other_preprocessor_bsl "#\(Если\|If\|ИначеЕсли\|ElsIf\|Иначе\|Else\|КонецЕсли\|EndIf\).*\(Тогда\|Then\)\?"
+syn match  keyword_other_preprocessor_bsl "#\(Если\|If\|ИначеЕсли\|ElsIf\|Иначе\|Else\|КонецЕсли\|EndIf\).*\(Тогда\|Then\)\?"
 " region
 syn region keyword_other_section_bsl start="#\(Область\|Region\)" end="$"
-syn match keyword_other_section_bsl "#\(КонецОбласти\|EndRegion\)"
+syn match  keyword_other_section_bsl "#\(КонецОбласти\|EndRegion\)"
 "Annotations
 syn region keyword_other_annotation start="&\(Перед\|Before\|После\|After\|Вместо\|Around\)" end="$" 
 "Functions w/o brackets
