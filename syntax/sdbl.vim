@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (SDBL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	19/10/2016
+" Last Change:	22/10/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -14,14 +14,14 @@ endif
 syn case ignore
 syn sync lines=250
 
-syn match   keyword_operator_punctuation_sdbl  "[,;]"
-syn match   keyword_operator_sdbl              "[-+/*%=<>]"
+syn match   keyword_operator_punctuation_sdbl  display "[,;]"
+syn match   keyword_operator_sdbl              display "[-+/*%=<>]"
 syn region  comment_line_double_slash_sdbl     start="//" end="$"
 syn region  string_quoted_double_sdbl          start=+\"+ end=+\"\(["]\)\@!+ contains=constant_character_escape_sdbl,comment_line_double_slash_sdbl
 syn match   constant_character_escape_sdbl     +\"\"+
 syn match   constant_language_sdbl             "\([^.]\@<=\|^\)\<\(Неопределено\|Undefined\|Истина\|True\|Ложь\|False\|NULL\)\>\([^.]\@=\|$\)"
-syn match   constant_numeric_bsl               "-\=\<\d\+\>"
-syn match   constant_float_bsl                 "-\=\<\d\+\.\d\+\>"
+syn match   constant_numeric_bsl              display "-\=\<\d\+\>"
+syn match   constant_float_bsl                display "-\=\<\d\+\.\d\+\>"
 syn match   variable_parameter_sdbl "\(&[a-z0-9_а-яё]\+\)"
 syn match   keyword_control_conditional_sdbl  "\([^.]\@<=\|^\)\<\(Выбор\|Case\|Когда\|When\|Тогда\|Then\|Иначе\|Else\|Конец\|End\)\>\([^.]\@=\|$\)" 
 syn match   keyword_operator_logical_sdbl      "\(\(КАК\s\|AS\s\)\@<!\)\([^.]\@<=\|^\)\<\(НЕ\|NOT\|И\|AND\|ИЛИ\|OR\|В\s\+ИЕРАРХИИ\|IN\s\+HIERARCHY\|В\|In\|Между\|Between\|Есть\sNULL\|Is\s\+NULL\|Ссылка\|Refs\|Подобно\|Like\)\>\([^.]\@=\|$\)" 

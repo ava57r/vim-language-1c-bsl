@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	20/10/2016
+" Last Change:	22/10/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -20,8 +20,8 @@ set cpo&vim
 syn case ignore
 syn sync lines=250
 
-syn match  keyword_operator_punctuation_bsl  "\([\[\]:(),;]\)"
-syn match  keyword_operator_bsl              "[-+/*%=<>.?]"
+syn match  keyword_operator_punctuation_bsl display  "[\[\]:(),;]"
+syn match  keyword_operator_bsl             display  "[-+/*%=<>.?]"
 
 "Поддержка 1c-query
 syntax include @bslSDBL <sfile>:p:h/sdbl.vim
@@ -30,8 +30,8 @@ unlet b:current_syntax
 syn region comment_line_double_slash_bsl  start="//" end="$"
 syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+ contains=source_sdbl
 syn region source_sdbl   start="\([^0-9a-zа-яё._]\@<=\|^\)\(Выбрать\|Select\(\s\+Разрешенные\|Allowed\)\?\(\s\+Различные\|Distinct\)\?\(\s\+Первые\|Top\)\?\)\([^0-9a-zа-яё._]\@=\|$\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
-syn match  constant_numeric_bsl              "-\=\<\d\+\>"
-syn match  constant_float_bsl                "-\=\<\d\+\.\d\+\>"
+syn match  constant_numeric_bsl             display "-\=\<\d\+\>"
+syn match  constant_float_bsl               display "-\=\<\d\+\.\d\+\>"
 syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
 
 " --- Keywords ---
