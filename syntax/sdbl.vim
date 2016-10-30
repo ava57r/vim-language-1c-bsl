@@ -71,7 +71,7 @@ syn keyword support_function_sdbl contained Представление Presentat
 syn keyword support_function_sdbl contained ПредставлениеСсылки RefPresentation
 syn keyword support_function_sdbl contained ТипЗначения ValueType
 
-syn match support_type_sdbl "\([^.]\@<=\|^\)\<\(Число\|Number\|Строка\|String\|Дата\|Date\)\>\([^.]\@=\|$\)"
+syn keyword support_type_sdbl Число Number Строка String Дата Date
 
 syn match sdblSupportFunction "\%([^.]\@1<=\|^\)\%(\<\%([a-z0-9_а-яё]\+\)*\>\)\ze\s*(" contains=support_function_sdbl
 
