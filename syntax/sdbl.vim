@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (SDBL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	22/10/2016
+" Last Change:	30/10/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -35,44 +35,45 @@ syn match keyword_control_sdbl "\([^.]\@<=\|^\)\<\(По\(\s\+Общие\)\?\|By\
 syn match keyword_control_sdbl "\([^.]\@<=\|^\)\<\(Периодами\|Periods\|Индексировать\|Index\|Выразить\|Cast\|Возр\|Asc\|Убыв\|Desc\|Для\s\+Изменения\|For\s\+Update\(\s\+Of\)\?\|Спецсимвол\|Escape\)\>\([^.]\@=\|$\)"
 
 "Функции языка запросов
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Значение\|Value\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ДатаВремя\|DateTime\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Тип\|Type\)\>\s*\((\@=\)"
+syn keyword support_function_sdbl contained Значение Value
+syn keyword support_function_sdbl contained ДатаВремя DateTime
+syn keyword support_function_sdbl contained Тип Type
 
 "Функции работы со строками
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Подстрока\|Substring\)\>\s*\((\@=\)"
+syn keyword support_function_sdbl contained Подстрока Substring
 
 "Функции работы с датами
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Год\|Year\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Квартал\|Quarter\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Месяц\|Month\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ДеньГода\|DayOfYear\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(День\|Day\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Неделя\|Week\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ДеньНедели\|Weekday\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Час\|Hour\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Минута\|Minute\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Секунда\|Second\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(НачалоПериода\|BeginOfPeriod\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(КонецПериода\|EndOfPeriod\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ДобавитьКДате\|DateAdd\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(РазностьДат\|DateDiff\)\>\s*\((\@=\)"
+syn keyword support_function_sdbl contained Год Year
+syn keyword support_function_sdbl contained Квартал Quarter
+syn keyword support_function_sdbl contained Месяц Month
+syn keyword support_function_sdbl contained ДеньГода DayOfYear
+syn keyword support_function_sdbl contained День Day
+syn keyword support_function_sdbl contained Неделя Week
+syn keyword support_function_sdbl contained ДеньНедели Weekday
+syn keyword support_function_sdbl contained Час Hour
+syn keyword support_function_sdbl contained Минута Minute
+syn keyword support_function_sdbl contained Секунда Second
+syn keyword support_function_sdbl contained НачалоПериода BeginOfPeriod
+syn keyword support_function_sdbl contained КонецПериода EndOfPeriod
+syn keyword support_function_sdbl contained ДобавитьКДате DateAdd
+syn keyword support_function_sdbl contained РазностьДат DateDiff
 
 "Агрегатные функции
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Сумма\|Sum\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Среднее\|Avg\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Минимум\|Min\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Максимум\|Max\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Количество\|Count\)\>\s*\((\@=\)"
+syn keyword support_function_sdbl contained Сумма Sum
+syn keyword support_function_sdbl contained Среднее Avg
+syn keyword support_function_sdbl contained Минимум Min
+syn keyword support_function_sdbl contained Максимум Max
+syn keyword support_function_sdbl contained Количество Count
 
 "Прочие функции
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ЕстьNULL\|IsNULL\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(Представление\|Presentation\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ПредставлениеСсылки\|RefPresentation\)\>\s*\((\@=\)"
-syn match support_function_sdbl "\([^.]\@<=\|^\)\<\(ТипЗначения\|ValueType\)\>\s*\((\@=\)"
+syn keyword support_function_sdbl contained ЕстьNULL IsNULL
+syn keyword support_function_sdbl contained Представление Presentation
+syn keyword support_function_sdbl contained ПредставлениеСсылки RefPresentation
+syn keyword support_function_sdbl contained ТипЗначения ValueType
 
 syn match support_type_sdbl "\([^.]\@<=\|^\)\<\(Число\|Number\|Строка\|String\|Дата\|Date\)\>\([^.]\@=\|$\)"
 
+syn match sdblSupportFunction "\%([^.]\@1<=\|^\)\%(\<\%([a-z0-9_а-яё]\+\)*\>\)\ze\s*(" contains=support_function_sdbl
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
