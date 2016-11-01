@@ -17,6 +17,11 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
+" Drop fold if it set but vim doesn't support it.
+if version < 600 && exists("bsl_fold")
+  unlet bsl_fold
+endif
+
 syn case ignore
 syn sync lines=250
 
@@ -36,8 +41,6 @@ syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d
 
 " --- Keywords ---
 syn keyword constant_language_bsl    Неопределено Undefined Истина True Ложь False NULL 
-syn keyword keyword_statement_bsl    Процедура Procedure Функция Function
-syn keyword keyword_statement_bsl    КонецПроцедуры EndProcedure КонецФункции EndFunction 
 syn keyword keyword_control_bsl      Прервать Break Продолжить Continue Возврат Return 
 syn keyword keyword_control_conditional_bsl Если If Иначе Else ИначеЕсли ElsIf Тогда Then КонецЕсли EndIf 
 syn keyword keyword_control_exception_bsl   Попытка Try Исключение Except КонецПопытки EndTry ВызватьИсключение Raise 
@@ -144,6 +147,35 @@ syn keyword support_class_bsl WSСсылки WSReferences БиблиотекаК
 syn keyword support_variable_bsl ГлавныйИнтерфейс MainInterface ГлавныйСтиль MainStyle ПараметрЗапуска LaunchParameter РабочаяДата WorkingDate ХранилищеВариантовОтчетов ReportsVariantsStorage ХранилищеНастроекДанныхФорм FormDataSettingsStorage ХранилищеОбщихНастроек CommonSettingsStorage ХранилищеПользовательскихНастроекДинамическихСписков DynamicListsUserSettingsStorage ХранилищеПользовательскихНастроекОтчетов ReportsUserSettingsStorage ХранилищеСистемныхНастроек SystemSettingsStorage
 
 syn match bslSupportFunction  "\%([^.]\@1<=\|^\)\%(\<\%([a-z0-9_а-яё]\+\)*\>\)\ze\s*(" contains=support_function_bsl
+
+" Поддержка сворачивания кода
+if exists("bsl_fold")
+    syn match keyword_statement_bsl "\<\(Функция\|Function\)\>"
+    syn match keyword_statement_bsl "\<\(КонецФункции\|EndFunction\)\>"
+    syn region bslFunctionFold
+	\ matchgroup=keyword_statement_bsl
+	\ start="\c\<\(функция\|function\)\>"
+	\ end="\c\<\(конецфункции\|endfunction\)\>"
+	\ transparent fold
+	\ keepend 
+
+    syn match keyword_statement_bsl "\<\(Процедура\|Procedure\)\>"
+    syn match keyword_statement_bsl "\<\(КонецПроцедуры\|EndProcedure\)\>"
+    syn region bslProcedureFold
+	\ matchgroup=keyword_statement_bsl
+	\ start="\c\<\(процедура\|procedure\)\>"
+	\ end="\c\<\(конецпроцедуры\|endprocedure\)\>"
+	\ transparent fold
+        \ keepend 
+
+    syn sync match bslSync	grouphere bslFunctionFold  "\<\(Функция\|Function\)\>"
+    syn sync match bslSync	grouphere bslProcedureFold "\<\(Процедура\|Procedure\)\>"
+
+    setlocal foldmethod=syntax
+else
+    syn keyword keyword_statement_bsl    Процедура Procedure Функция Function
+    syn keyword keyword_statement_bsl    КонецПроцедуры EndProcedure КонецФункции EndFunction 
+endif
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
