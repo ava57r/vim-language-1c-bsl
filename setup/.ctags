@@ -1,0 +1,6 @@
+--langdef=bsl
+--langmap=bsl:.bsl.os
+--regex-bsl=/^[ \t]*Функция[ \t]+([^\(]*)/\1/f,function,functions/i
+--regex-bsl=/^[ \t]*Function[ \t]+([^\(]*)/\1/f,function,functions/i
+--regex-bsl=/^[ \t]*Процедура[ \t]+([^\(]*)/\1/p,procedure,procedures/i
+--regex-bsl=/^[ \t]*Procedure[ \t]+([^\(]*)/\1/p,procedure,procedures/i
