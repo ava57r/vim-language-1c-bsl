@@ -11,7 +11,7 @@
 * [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 * [tlib_vim](https://github.com/tomtom/tlib_vim)
 * [tagbar](https://github.com/majutsushi/tagbar)
-* [Exuberant ctags 5.5](http://ctags.sourceforge.net/) или [universal-ctags](https://github.com/universal-ctags/ctags)
+* [Exuberant ctags](http://ctags.sourceforge.net/)(минимальная версия 5.9) или [universal-ctags](https://github.com/universal-ctags/ctags)
 
 # Установка
 Установим менеджер пакетов Vundle для vim [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
