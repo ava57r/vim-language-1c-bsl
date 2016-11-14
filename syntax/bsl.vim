@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	01/11/2016
+" Last Change:	14/11/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -32,12 +32,14 @@ syn match  keyword_operator_bsl             display  "[-+/*%=<>.?]"
 syntax include @bslSDBL <sfile>:p:h/sdbl.vim
 unlet b:current_syntax
 
-syn region comment_line_double_slash_bsl  start="//" end="$"
+syn region comment_line_double_slash_bsl  start="//" end="$" contains=bslTODO
 syn region string_quoted_double_bsl       matchgroup=bslStrings start=+"+ end=+"+ contains=source_sdbl
 syn region source_sdbl   start="\(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
 syn match  constant_numeric_bsl             display "-\=\<\d\+\>"
 syn match  constant_float_bsl               display "-\=\<\d\+\.\d\+\>"
 syn match  constant_other_date_bsl           "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
+
+syn keyword bslTODO                  contained TODO FIXME 
 
 " --- Keywords ---
 syn keyword constant_language_bsl    Неопределено Undefined Истина True Ложь False NULL 
@@ -195,6 +197,7 @@ HiLink string_quoted_double_bsl                  String
 HiLink constant_numeric_bsl                      Number
 HiLink constant_float_bsl                        Float
 HiLink constant_other_date_bsl                   Constant
+HiLink bslTODO                                   Todo
 HiLink constant_language_bsl                     Constant
 HiLink keyword_statement_bsl                     Statement
 HiLink keyword_control_bsl                       Keyword
