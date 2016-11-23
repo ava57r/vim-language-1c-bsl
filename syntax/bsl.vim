@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	20/11/2016
+" Last Change:	23/11/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -90,7 +90,7 @@ syn keyword support_function_bsl contained СтрРазделить StrSplit
 syn keyword support_function_bsl contained СтрСоединить StrConcat 
 
 " Глобальный контекст - функции работы со значениями типа Число
-syn keyword support_function_bsl contained Цел Int Окр Round ACos ACos ASin ASin ATan ATan Cos Cos Exp Exp Log Log Log10 Log10 Pow Pow Sin Sin Sqrt Sqrt Tan Tan 
+syn keyword support_function_bsl contained Цел Int Окр Round ACos ASin ATan Cos Exp Log Log10 Pow Sin Sqrt Tan 
 
 " Глобальный контекст - функции работы со значениями типа Дата
 syn keyword support_function_bsl contained Год Year 
