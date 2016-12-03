@@ -34,10 +34,10 @@ unlet b:current_syntax
 
 syn region bslCommentLineDoubleSlash  start="//" end="$" contains=bslTODO
 syn region bslStringQuotedDouble      matchgroup=bslStrings start=+"+ end=+"+ contains=sdblSource
-syn region sdblSource                 start="\(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
+syn region sdblSource                 start="\%(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
 syn match  bslConstantNumeric         display "-\=\<\d\+\>"
 syn match  bslConstantFloat           display "-\=\<\d\+\.\d\+\>"
-syn match  bslConstantOtherDate       "\'\(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
+syn match  bslConstantOtherDate       "\'\%(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
 
 syn keyword bslTODO                   contained TODO FIXME
 
@@ -58,10 +58,10 @@ syn keyword bslStorageModifier           Экспорт Знач Перем
 syn keyword bslStorageModifier           Export Val Var
 
 " directive
-syn match  bslOtherDirective "&\(НаКлиенте\(\(НаСервере\(БезКонтекста\)\?\)\?\)\|AtClient\(\(AtServer\(NoContext\)\?\)\?\)\|НаСервере\(БезКонтекста\)\?\|AtServer\(NoContext\)\?\)"
+syn match  bslOtherDirective "&\%(НаКлиенте\(\(НаСервере\(БезКонтекста\)\?\)\?\)\|AtClient\(\(AtServer\(NoContext\)\?\)\?\)\|НаСервере\(БезКонтекста\)\?\|AtServer\(NoContext\)\?\)"
 syn region bslControlImport  start="#\(Использовать\|Use\)" end="$"
 " preprocessor conditional
-syn match  bslOtherPreprocessor "#\(Если\|If\|ИначеЕсли\|ElsIf\|Иначе\|Else\|КонецЕсли\|EndIf\).*\(Тогда\|Then\)\?"
+syn match  bslOtherPreprocessor "#\%(Если\|If\|ИначеЕсли\|ElsIf\|Иначе\|Else\|КонецЕсли\|EndIf\).*\(Тогда\|Then\)\?"
 " region
 syn region bslOtherSection start="#\(Область\|Region\)" end="$"
 syn match  bslOtherSection "#\(КонецОбласти\|EndRegion\)"
