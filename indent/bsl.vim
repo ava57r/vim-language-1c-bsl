@@ -108,6 +108,6 @@ function! GetBslIndent(lnum)
   return previndent
 endfunction
 
-let &cpo = s:keepcpo
-unlet s:keepcpo
+let &cpo = s:save_cpo
+unlet s:save_cpo
 " vim:sw=2
