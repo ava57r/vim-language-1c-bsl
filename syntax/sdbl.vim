@@ -19,20 +19,32 @@ syn match   sdblOperator                   display "[-+/*%=<>]"
 syn region  sdblCommentLineDoubleSlash     start="//" end="$"
 syn region  sdblStringQuotedDouble         start=+\"+ end=+\"\(["]\)\@!+ contains=sdblConstantCharacterEscape,sdblCommentLineDoubleSlash
 syn match   sdblConstantCharacterEscape    +\"\"+
-syn match   sdblConstantLanguage           "\([^.]\@<=\|^\)\<\(Неопределено\|Undefined\|Истина\|True\|Ложь\|False\|NULL\)\>\([^.]\@=\|$\)"
+syn keyword sdblConstantLanguage           Неопределено Истина Ложь
+syn keyword sdblConstantLanguage           Undefined True False NULL
 syn match   sdblConstantNumeric            display "-\=\<\d\+\>"
 syn match   sdblConstantFloat              display "-\=\<\d\+\.\d\+\>"
 syn match   sdblVariableParameter          "\(&[a-z0-9_а-яё]\+\)"
-syn match   sdblKeywordControlConditional  "\([^.]\@<=\|^\)\<\(Выбор\|Case\|Когда\|When\|Тогда\|Then\|Иначе\|Else\|Конец\|End\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordOperatorLogical     "\(\(КАК\s\|AS\s\)\@<!\)\([^.]\@<=\|^\)\<\(НЕ\|NOT\|И\|AND\|ИЛИ\|OR\|В\s\+ИЕРАРХИИ\|IN\s\+HIERARCHY\|В\|In\|Между\|Between\|Есть\sNULL\|Is\s\+NULL\|Ссылка\|Refs\|Подобно\|Like\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(Выбрать\|Select\|Разрешенные\|Allowed\|Различные\|Distinct\|Первые\|Top\|Как\|As\|ПустаяТаблица\|EpmtyTable\|Поместить\|Into\|Уничтожить\|Drop\|Из\|From\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(\(Левое\|Left\|Правое\|Right\|Полное\|Full\)\s\+\(Внешнее\s\+\|Outer\s\+\)\?Соединение\|Join\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(\(Внутреннее\s\+\|Inner\s\+\)\?Соединение\|Join\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(Где\|Where\|Сгруппировать\s\+По\|Group\s\+By\|Имеющие\|Having\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(Объединить\(\s\+Все\)\?\|Union\(\s\+All\)\?\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(Упорядочить\s\+По\|Order\s\+By\|Автоупорядочивание\|Autoorder\|Итоги\|Totals\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(По\(\s\+Общие\)\?\|By\(\s\+Overall\)\?\|\(Только\s\+\)\?Иерархия\|\(Only\s\+\)\?Hierarchy\)\>\([^.]\@=\|$\)"
-syn match   sdblKeywordControl             "\([^.]\@<=\|^\)\<\(Периодами\|Periods\|Индексировать\|Index\|Выразить\|Cast\|Возр\|Asc\|Убыв\|Desc\|Для\s\+Изменения\|For\s\+Update\(\s\+Of\)\?\|Спецсимвол\|Escape\)\>\([^.]\@=\|$\)"
+syn keyword sdblKeywordControlConditional  Выбор Когда Тогда Иначе Конец
+syn keyword sdblKeywordControlConditional  Case When Then Else End
+syn keyword sdblKeywordOperatorLogical     НЕ И ИЛИ В Между Подобно
+syn keyword sdblKeywordOperatorLogical     NOT AND OR In Between Like
+syn match   sdblKeywordOperatorLogical     "\<\%(В\s\+ИЕРАРХИИ\|IN\s\+HIERARCHY\|Есть\(\s\+НЕ\)\?\s\+NULL\|Is\(\s\+NOT\)\?\s\+NULL\)\>"
+syn match   sdblKeywordOperatorLogical     "\([^.]\@<=\|^\)\<\(Ссылка\|Refs\)\>\([^.]\@=\|$\)"
+syn keyword sdblKeywordControl             Выбрать Разрешенные Различные Первые Как ПустаяТаблица Поместить Уничтожить Из
+syn keyword sdblKeywordControl             Select Allowed Distinct Top As EpmtyTable Into Drop From
+syn match   sdblKeywordControl             "\<\%(\(Левое\|Left\|Правое\|Right\|Полное\|Full\)\s\+\(Внешнее\s\+\|Outer\s\+\)\?Соединение\|Join\)\>"
+syn match   sdblKeywordControl             "\<\%(\(Внутреннее\|Inner\)\s\+Соединение\|Join\)\>"
+syn keyword sdblKeywordControl             Где Имеющие
+syn keyword sdblKeywordControl             Where Having
+syn match   sdblKeywordControl             "\<\(Сгруппировать\s\+По\|Group\s\+By\)\>"
+syn match   sdblKeywordControl             "\<\%(Объединить\(\s\+Все\)\?\|Union\(\s\+All\)\?\)\>"
+syn keyword sdblKeywordControl             Автоупорядочивание Итоги
+syn keyword sdblKeywordControl             Autoorder Totals
+syn match   sdblKeywordControl             "\<\(Упорядочить\s\+По\|Order\s\+By\)\>"
+syn match   sdblKeywordControl             "\<\%(По\(\s\+Общие\)\?\|By\(\s\+Overall\)\?\|\(Только\s\+\)\?Иерархия\|\(Only\s\+\)\?Hierarchy\)\>"
+syn keyword sdblKeywordControl             Периодами Индексировать Выразить Возр Убыв Спецсимвол
+syn keyword sdblKeywordControl             Periods Index Cast Asc Desc Escape
+syn match   sdblKeywordControl             "\<\%(Для\s\+Изменения\|For\s\+Update\(\s\+Of\)\?\)\>"
 
 "Функции языка запросов
 syn keyword sdblNameSupportFunction contained Значение Value

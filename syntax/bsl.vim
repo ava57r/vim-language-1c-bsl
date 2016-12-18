@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	03/12/2016
+" Last Change:	18/12/2016
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -34,7 +34,7 @@ unlet b:current_syntax
 
 syn region bslCommentLineDoubleSlash  start="//" end="$" contains=bslTODO
 syn region bslStringQuotedDouble      matchgroup=bslStrings start=+"+ end=+"+ contains=sdblSource
-syn region sdblSource                 start="\%(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
+syn region sdblSource                 contained start="\%(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
 syn match  bslConstantNumeric         display "-\=\<\d\+\>"
 syn match  bslConstantFloat           display "-\=\<\d\+\.\d\+\>"
 syn match  bslConstantOtherDate       "\'\%(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"
