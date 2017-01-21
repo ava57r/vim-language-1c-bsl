@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	1C (BSL)
 " Maintainer:	Alexander Andreev <andreevlex.as@gmail.com>
-" Last Change:	18/12/2016
+" Last Change:	21/01/2017
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -63,9 +63,9 @@ syn region bslControlImport  start="#\(Использовать\|Use\)" end="$"
 " preprocessor conditional
 syn match  bslOtherPreprocessor "#\%(Если\|If\|ИначеЕсли\|ElsIf\|Иначе\|Else\|КонецЕсли\|EndIf\).*\(Тогда\|Then\)\?"
 " region
-syn region bslOtherSection start="#\(Область\|Region\)" end="$"
-syn match  bslOtherSection "#\(КонецОбласти\|EndRegion\)"
-"Annotations
+syn match bslOtherSection "#\(Область\|Region\).*$"
+syn match bslOtherSection "#\(КонецОбласти\|EndRegion\)"
+" Annotations
 syn region bslOtherAnnotation start="&\(Перед\|Before\|После\|After\|Вместо\|Around\)" end="$"
 "Functions w/o brackets
 syn keyword bslNameSupportFunction Новый New
@@ -541,8 +541,17 @@ if exists("bsl_fold")
 	\ transparent fold
         \ keepend
 
+   syn region bslOtherSectionFold
+	\ matchgroup=bslOtherSection
+	\ start="#\(Область\|Region\)"
+	\ end="#\(КонецОбласти\|EndRegion\)"
+	\ transparent fold
+        \ extend
+
+
     syn sync match bslSync	grouphere bslFunctionFold  "\<\(Функция\|Function\)\>"
     syn sync match bslSync	grouphere bslProcedureFold "\<\(Процедура\|Procedure\)\>"
+    syn sync match bslSync	grouphere bslOtherSectionFold "#\(Область\|Region\)"
 
     setlocal foldmethod=syntax
 else
