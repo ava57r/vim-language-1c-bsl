@@ -1,0 +1,32 @@
+*bsl.txt*      Filetype plugin for language 1С:Enterprise BSL
+
+==============================================================================
+CONTENTS                                                      *bsl* *ft-bsl*
+
+1. Introduction                                                   |bsl-intro|
+2. Settings                                                    |bsl-settings|
+3. Commands                                                    |bsl-commands|
+
+==============================================================================
+INTRODUCTION                                                      *bsl-intro*
+
+This plugin provides syntax and supporting functionality for the language
+1С:Enterprise BSL filetype.
+
+==============================================================================
+SETTINGS                                                       *bsl-settings*
+
+This plugin has a few variables you can define in your vimrc that change the
+behavior of the plugin.
+
+                                                                   *bsl_fold*
+bsl_fold~
+	Set this option to enable the code folding: >
+	    let bsl_fold = 1
+<
+
+==============================================================================
+COMMANDS                                                       *bsls-commands*
+
+==============================================================================
+ vim:tw=78:sw=4:noet:ts=8:ft=help:norl:
