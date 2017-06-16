@@ -33,8 +33,14 @@ syntax include @bslSDBL <sfile>:p:h/sdbl.vim
 unlet b:current_syntax
 
 syn region bslCommentLineDoubleSlash  start="//" end="$" contains=bslTODO
-syn region bslStringQuotedDouble      matchgroup=bslStrings start=+"+ end=+"+ contains=sdblSource
-syn region sdblSource                 contained start="\%(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
+
+if exists("g:sdbl_syntax_disable")
+  syn region bslStringQuotedDouble      matchgroup=bslStrings start=+"+ end=+"+ 
+else
+  syn region bslStringQuotedDouble      matchgroup=bslStrings start=+"+ end=+"+ contains=sdblSource
+  syn region sdblSource                 contained start="\%(Выбрать\|Select\(\s\+Разрешенные\|\s\+Allowed\)\?\(\s\+Различные\|\s\+Distinct\)\?\(\s\+Первые\|\s\+Top\)\?\)" end="\(\(\"[^\"]\)\@=\)" contains=@bslSDBL transparent
+endif
+
 syn match  bslConstantNumeric         display "-\=\<\d\+\>"
 syn match  bslConstantFloat           display "-\=\<\d\+\.\d\+\>"
 syn match  bslConstantOtherDate       "\'\%(\(\d{4}[^\d\']*\d{2}[^\d\']*\d{2}\)\([^\d\']*\d{2}[^\d\']*\d{2}\([^\d\']*\d{2}\)\?\)\?\)\'"

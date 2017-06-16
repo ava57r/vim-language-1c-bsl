@@ -25,8 +25,14 @@ bsl_fold~
 	    let bsl_fold = 1
 <
 
+                                                        *sdbl_syntax_disable*
+sdbl_syntax_disable~
+	Set this option to disable the syntax highlighting Query text: >
+	    let g:sdbl_syntax_disable = 1
+<
+
 ==============================================================================
-COMMANDS                                                       *bsls-commands*
+COMMANDS                                                       *bsl-commands*
 
 ==============================================================================
  vim:tw=78:sw=4:noet:ts=8:ft=help:norl:
